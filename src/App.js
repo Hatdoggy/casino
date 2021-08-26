@@ -1,24 +1,42 @@
-import logo from './logo.svg';
-import './App.css';
+import Chips,{Intro,End,Pop,MobGreet} from './Components.js'
+import Main,{MobMain} from './components/Main.js'
+import {useState} from 'react'
+import { useMediaQuery } from 'react-responsive';
 
 function App() {
+
+  const [end,showEnd] = useState(false);
+  const [txt,updTxt] = useState({
+    head:"",
+    mes:0
+  })
+  const {data} = window.data; 
+
+  const [stats,updStats] = useState({
+    spins:3,
+    cash:25,
+    pop:false,
+    main:false,
+    start:true,
+    mobMain:false
+  })
+  const small = useMediaQuery({
+    query: '(max-width : 1000px)'
+  })   
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <div className="App pos-rel h-100 flx">
+      {stats.pop&&<Pop stats={stats} cash={stats.cash} hide={updStats} end={showEnd} txt={txt}/>}
+      { 
+        stats.start&&!small?
+            <Main stats={stats} pop={updStats} end={showEnd} txt={txt} upd={updTxt}/>
+          :
+            stats.mobMain&&!end?
+              <MobMain stats={stats} pop={updStats} end={showEnd} txt={txt} upd={updTxt}/>
+              :
+              <MobGreet end={end} upd={updStats} stats={stats}/>        
+      } 
+      </div>
   );
 }
 

@@ -1,0 +1,178 @@
+@media only screen
+and (max-width: 1000px) {
+	.svgImg{
+		width: 50%!important;
+	}
+}
+
+@media (max-width : 640px){
+	h1,h2,h4,p,button{
+		width: 100%!important;
+		text-align: center!important;
+	}	
+	main{
+		height: auto!important;
+		.greet{
+			&:after{
+				width: 100%!important;
+				height: 2px;
+			}
+		}
+		flex-direction: column;
+		section,aside{
+			padding:20px!important;
+		}aside{
+			width: auto!important;
+			justify-content: center!important;
+			height: auto!important;
+		}section{
+			width: 100%!important;
+		}
+
+		section.greetMes{
+			height: 30%!important;
+		}	
+		.chips{
+			display: none;
+		}
+	}
+
+	.w{
+		width: 30%!important;
+	}
+
+	.mob-main{
+		.spinner{
+			height: 80%!important;
+			width: 100%!important;
+		}.content{
+			height: 20%!important;
+		}
+	}
+
+	.shdw-pop{
+		width: 80%!important;
+		div{
+			width: 100%!important;
+		}
+	}
+}
+
+@media only screen 
+and (min-width : 481px)
+and (max-width : 1000px) 
+and (orientation: landscape){
+	.chip-s{
+		bottom: -10%!important;
+	}.chip-xs{
+		left: 5%!important;
+	}.chip-m{
+		left:20%!important;
+	}
+
+	section{
+		h4{
+			width: 80%!important;
+		}
+		.mobImg{
+			width: 20%!important;
+		}
+		button{
+			width: 50%!important;
+		}
+	}aside{
+		width: auto!important;
+		margin: 2%!important;
+		div{
+			height: auto!important;
+		}
+	}
+
+	footer{
+		display: none!important;
+	}	
+	section.grt-mob{
+		height: auto!important;
+		justify-content: center!important;
+	}
+	.shdw-pop{
+		width: 80%!important;
+		height: 80%!important;
+		div{
+			width: 100%!important;
+		}.stat{
+			width: 80%!important;
+			button{
+				width: 80%!important;
+			}
+		}
+	}	
+	.mob-main{
+		.spinner{
+			height: 90%!important;
+			width: 100%!important;
+		}.content{
+			height: 10%!important;
+			width: 100%!important;
+		}
+	}
+}
+
+/* Portrait IPAD */
+@media only screen 
+and (min-device-width: 768px) 
+and (max-device-width: 1024px) 
+and (orientation: portrait) {
+	h1,h4,p,button{
+		width: 100%!important;
+		text-align: center;
+	}	
+	main{
+		.greet{
+			&:after{
+				width: 100%!important;
+				height: 2px;
+			}
+		}
+		flex-direction: column;
+		section,aside{
+			width: auto!important;
+			padding:20px!important;
+		}
+		section.greetMes{
+			height: 30%!important;
+		}
+		.chips{
+			display: none;
+		}
+	}
+
+	.mob-main{
+		.spinner{
+			height: 80%!important;
+		}.content{
+			height: 20%!important;
+			button{
+				width: 80%!important;
+			}
+		}
+	}
+
+	.shdw-pop{
+		width: 80%!important;
+		div{
+			width: 100%!important;
+		}
+	}	
+}
+
+@media only screen
+and (min-width: 1400px) {
+	.side{
+		justify-content: center!important;
+	}.shdw-side{
+		section{
+			justify-content: space-around!important;
+		}
+	}
+}
