@@ -54,7 +54,7 @@ const PopCont = (props)=>{
 	const clicked = async(id)=>{
 		if(spins > 0){
 			let delay = await spinning(spins);
-			let res = (txt.head==="You won")?cash+txt.mes:cash-txt.mes;
+			let res = (txt.head==="You won \nR")?cash+txt.mes:cash-txt.mes;
 			hide({
 				...stats,
 				spins:spins-1,
@@ -73,13 +73,13 @@ const PopCont = (props)=>{
 
 	return(
 				<div className="brd flx flx-col flx-jc-sa flx-ai-ce brd-wht1 txt-wht p-20 h-100">
-					{spins === 0&&<img src="./brand/symbol1.png" alt="win" className="w-10 w"/>}
+					{spins === 0&&<img src="./img/logo.svg" alt="win" className="w-10 w"/>}
 					<div className="flx flx-col flx-jc-ce flx-ai-ce">
-						<h2 className="slab slab-xb">{spins>0?`${txt.head} $${txt.mes}`:"Kudos!"}</h2>
+						<h2 className="slab slab-xb">{spins>0?`${txt.head} R${txt.mes}`:"Kudos!"}</h2>
 						{spins>0?
-						<p className="rob txt-al-ce">Click the button to try again</p>
+						<p className="rob txt-al-ce">{window.data.popMes}</p>
 						:
-						<small className="rob txt-al-ce m-t-2 smol">Your bonus win has just been reserved and you are eligible for C$200 + 60 BONUS SPINS Claim it instant below!</small>
+						<small className="rob txt-al-ce m-t-2 smol">{window.data.popTxt.mes1}<strong className="bold">{window.data.popTxt.bold}</strong>{window.data.popTxt.mes2}</small>
 						}
 					</div>	
 
@@ -87,13 +87,13 @@ const PopCont = (props)=>{
 						{spins!=0&&	
 						<div className="flx flx-jc-ce flx-ai-ce w-80">
 							<span className="flx flx-jc-ce flx-ai-ce">
-								<h4 className="rob txt-wht flx">{pop.bal}<span className="m-l-5 rob-bld rob">{cash}</span></h4>
+								<h4 className="rob txt-wht flx">{pop.bal}<p className="txt-gld m-l-5 rob-bld rob">{cash}</p></h4>
 							</span>
 							<span className="flx flx-jc-ce flx-ai-ce m-l-auto">
 								<h4 className="rob txt-wht flx">{pop.spins}<span className="m-l-5 rob-bld rob">{spins}</span></h4>
 							</span>
 						</div>}
-						<button className={`m-t-2 brd flx flx-ai-ce p-20 w-100 ${spins>0?"btn-wht":"btn-grn txt-wht txt-al-ce flx-jc-ce"} slab slab-b shdw-btn product-button`} data-product-id="1" onClick={(elem)=>clicked(elem.target.dataset.productId)}>{spins>0?pop.btn:"CLAIM WINNINGS!"} {spins>0&&<img src="./img/spin.svg" alt="spinner" className="w-10 m-l-auto"/>}</button>						
+						<button className={`m-t-2 brd flx flx-ai-ce p-20 w-100 ${spins>0?"btn-wht":"btn-wht pulse txt-al-ce flx-jc-ce"} slab slab-b shdw-btn product-button`} data-product-id="1" onClick={(elem)=>clicked(elem.target.dataset.productId)}>{spins>0?pop.btn:"CLAIM WINNINGS!"} {spins>0&&<img src="./img/spin.svg" alt="spinner" className="w-10 rotating m-l-auto"/>}</button>						
 					</div>
 
 				</div>
@@ -137,7 +137,7 @@ const End = ()=>{
 
 const Intro = (prop)=>{
 	return(
-		<main className="flx flx-jc-ce flx-ai-ce h-100 w-100 bg-img2 pos-rel fade z-main">
+		<main className="flx flx-jc-ce flx-ai-ce h-100 w-100 bg-img pos-rel fade z-main">
 			<Greet/>
 			{/*<Chips/>*/}
 			{
@@ -169,12 +169,12 @@ const MobGreet = (prop)=>{
 				<section className="h-80 flx flx-col flx-jc-sb flx-ai-ce p-20 brd brd-wht2 fade-t">
 
 					<div className="flx flx-col flx-jc-ce flx-ai-ce">
-						<img src="./brand/logo.png" alt="logo" className="w-30"/>
-						<p className="txt-al-ce txt-wht rob">{roulette.top}</p>					
+						<img src="./img/logo.svg" alt="logo" className="w-30"/>
+						<p className="txt-al-ce txt-gld rob m-t-2">{roulette.top}</p>					
 					</div>
 
 					<div className="flx flx-col flx-jc-ce flx-ai-ce">
-						<img src="./brand/tokens.png" alt="walk" className="w-50 mobImg"/>
+						<img src="./img/run.png" alt="walk" className="w-50 mobImg"/>
 						<p className="txt-al-ce txt-wht rob m-t-2 w-80">{roulette.imgMes}</p>					
 					</div>
 					<button className="m-t-2 brd flx flx-ai-ce p-10 w-80 btn-wht slab slab-b shdw-btn" onClick={clicked}>SPIN NOW! <img src="./img/spin.svg" alt="spinner" className="w-10 m-l-auto"/></button>

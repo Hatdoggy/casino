@@ -7,8 +7,8 @@ const Roulette = (props)=>{
    		query: '(max-width : 640px)'
   	})
 	return(	
-		<section className={`flx flx-col flx-jc-sa flx-ai-ce w-70 txt-wht h-100 p-50 ${small?"bg-img3":"bg-img2"} spinner`}>
-			{small&&<img src="./brand/logo.png" alt="logo" className="w-50"/>}
+		<section className={`flx flx-col flx-jc-sa flx-ai-ce w-70 txt-wht h-100 p-50 bg-img spinner`}>
+			{small&&<img src="./img/logo.svg" alt="logo" className="w-50"/>}
 			<Spinner stats={props.stats} pop={props.pop} end={props.end} txt={props.txt} upd={props.upd}/>
 		</section>
 	)
@@ -23,7 +23,7 @@ const Content = (props)=>{
 				<div className="flx flx-col flx-jc-ce flx-ai-ce btn-cont bg-blue w-100 content">
 					<div className="flx flx-jc-ce flx-ai-ce w-80">
 						<span className="flx flx-jc-ce flx-ai-ce">
-							<h4 className="rob txt-wht flx">{data.bal}$<span className="m-l-5 rob-bld rob">{cash}</span></h4>
+							<h4 className="rob txt-wht flx">{data.bal}R<span className="m-l-5 rob-bld rob txt-gld">{cash}</span></h4>
 						</span>
 						<span className="flx flx-jc-ce flx-ai-ce m-l-auto">
 							<h4 className="rob txt-wht flx">{data.spins}<span className="m-l-5 rob-bld rob">{spins}</span></h4>
@@ -40,13 +40,13 @@ const Aside = (props)=>{
 
 			<section className="h-80 flx flx-col flx-jc-sb flx-ai-ce p-20 brd brd-wht2 fade-t">
 
-				<div className="flx flx-col flx-jc-ce flx-ai-ce">
-					<img src="./brand/logo.png" alt="logo" className="w-50"/>
-					<p className="txt-al-ce txt-wht rob">{roulette.top}</p>					
+			<div className="flx flx-col flx-jc-ce flx-ai-ce">
+					<img src="./img/logo.svg" alt="logo" className="w-50"/>
+					<p className="txt-al-ce txt-gld rob m-t-2">{roulette.top}</p>					
 				</div>
 
 				<div className="flx flx-col flx-jc-ce flx-ai-ce">
-					<img src="./brand/tokens.png" alt="walk" className="w-70"/>
+					<img src="./img/run.png" alt="walk" className="w-30"/>
 					<p className="txt-al-ce txt-wht rob m-t-2 w-80">{roulette.imgMes}</p>					
 				</div>
 

@@ -47,7 +47,7 @@ export function ActionRedirect(action){
     spins = ctr;
 
     if(ctr > 1){
-     deg = 1485;
+     deg = check();
     }else{
       deg = 1800;
     }

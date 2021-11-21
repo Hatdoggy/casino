@@ -14,7 +14,7 @@ function App() {
 
   const [stats,updStats] = useState({
     spins:3,
-    cash:25,
+    cash:data.cash,
     pop:false,
     main:false,
     start:true,

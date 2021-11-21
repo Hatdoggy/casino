@@ -1,0 +1,97 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@700;900&family=Roboto:wght@400;700&display=swap');
+@import '_var';
+@import '_def';
+@import '_struct';
+@import '_query';
+
+
+.slab{
+	font-family: $slab;
+	&-b{
+		font-weight: 700;
+	}
+	&-xb{
+		font-weight: 900;
+	}
+}
+
+.rob{
+	font-family: $rob;
+	&-reg{
+		font-weight: 400;
+	}
+	&-bld{
+		font-weight: 700;
+	}
+}
+
+h1{
+	font-size: clamp(2.5rem,7vw,7rem);
+}h2{
+	font-size: clamp(2rem,3vw,3rem);
+}h4{
+	font-size: clamp(1.3rem,1.5vw,1.8rem);
+}p,button{
+	font-size: clamp(1rem,1.1vw,1.3rem);	
+}small{
+	font-size: clamp(.65rem,.75rem,1rem);
+}small.smol{
+	line-height: 2;
+}
+
+.svgImg{
+	width: 80%;
+	height: 50%;
+}
+
+.greet{
+	position: relative;
+	&:after{
+		content: "";
+		height: 5px;
+		width: 50%;
+		position:absolute;
+		top: calc(100% + 5px);
+		display: block;
+		background-color:white;
+	}
+}
+
+.chip{
+	&-xs{
+		top: -10%;
+		left: 15%;
+		width: 10%;
+		animation: 1s fromTop;
+		-webkit-animation: 1s fromTop;	
+	}
+	&-s{
+		bottom: 10%;
+		left: 20%;
+		width: 15%;
+		animation: 1s fromBot;
+		-webkit-animation: 1s fromBot;			
+	}
+	&-m{
+		top: -35%;
+		left:35%;
+		width: 25%;
+		animation: 1s fromTop;
+		-webkit-animation: 1s fromTop;	
+	}
+	&-l{
+		bottom: -35%;
+		left: -15%;
+		width: 30%;
+		animation: 1s fromBot;
+		-webkit-animation: 1s fromBot;	
+	}
+}
+
+main{
+	overflow: hidden;
+}
+
+.wheel{
+	transform-origin: center center;
+}
